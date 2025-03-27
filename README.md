@@ -10,7 +10,9 @@ You can view the live application here: [GitHub Profiles Live](https://github-pr
 To clone and run this project locally, follow these steps:
 
 ### 1. Clone the repository:
+ ```bash
 git clone https://github.com/yourusername/github-profiles.git
+```
 
 ### 2. Navigate into the project directory:
 cd github-profiles
