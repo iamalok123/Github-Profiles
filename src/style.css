@@ -1,0 +1,388 @@
+/* Theme Colors */
+:root {
+    --dark-bg: #0d1117;
+    --dark-secondary: #161b22;
+    --dark-border: #30363d;
+    --dark-text: #c9d1d9;
+    
+    --light-bg: #ffffff;
+    --light-secondary: #f6f8fa;
+    --light-border: #d0d7de;
+    --light-text: #24292f;
+    
+    --accent-blue: #2188ff;
+    --accent-green: #238636;
+    --transition: 0.3s ease;
+}
+
+/* Basic Reset and Font */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+/* App Container */
+.app {
+    min-height: 100vh;
+    transition: all var(--transition);
+}
+
+/* Theme Styles */
+.app.dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.app.light {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+/* Header Styles */
+#heading {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 16px 32px;
+    transition: background-color var(--transition);
+}
+
+#heading.dark {
+    background-color: var(--dark-secondary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+#heading.light {
+    background-color: var(--light-secondary);
+    border-bottom: 1px solid var(--light-border);
+}
+
+/* Header Content Layout */
+.header-content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* GitHub Icon Animation */
+.github-icon {
+    width: 45px;
+    height: 45px;
+    transition: transform var(--transition);
+}
+
+.github-icon:hover {
+    transform: rotate(360deg);
+}
+
+/* Basic Text Styles */
+h1 {
+    font-size: 28px;
+    margin: 0;
+    color: inherit;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Profile Cards Grid */
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 32px;
+}
+
+/* Card Styles */
+.cards {
+    padding: 24px;
+    border-radius: 6px;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card Theme Styles */
+.dark .cards {
+    background-color: var(--dark-secondary);
+    border: 1px solid var(--dark-border);
+}
+
+.light .cards {
+    background-color: var(--light-bg);
+    border: 1px solid var(--light-border);
+}
+
+/* Card Rainbow Effect */
+.cards::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f0f, #0ff);
+    transform: translateX(-100%);
+    transition: transform var(--transition);
+}
+
+.cards:hover::before {
+    transform: translateX(0);
+}
+
+/* Profile Image Styles */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform var(--transition);
+    border: 3px solid transparent;
+}
+
+.cards:hover img {
+    transform: scale(1.05);
+    border-color: var(--accent-blue);
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 32px;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Input Styles */
+.inpu {
+    width: 250px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all var(--transition);
+}
+
+/* Input Theme Styles */
+.dark .inpu {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text);
+}
+
+.light .inpu {
+    background-color: var(--light-bg);
+    border: 1px solid var(--light-border);
+    color: var(--light-text);
+}
+
+/* Input Focus Effect */
+.inpu:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(33, 136, 255, 0.3);
+}
+
+/* Button Styles */
+button {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    color: white;
+}
+
+/* Button Theme Styles */
+.dark button {
+    background-color: var(--accent-green);
+    border: 1px solid rgba(240,246,252,0.1);
+}
+
+.light button {
+    background-color: var(--accent-green);
+    border: 1px solid rgba(27,31,36,0.15);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+}
+
+/* Scrolling Text Banner */
+.marquee-container {
+    background: var(--dark-secondary);
+    overflow: hidden;
+    position: relative;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--dark-border);
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.marquee-container.light {
+    background: var(--light-secondary);
+    border-bottom: 1px solid var(--light-border);
+}
+
+.marquee-content {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Scrolling Animation */
+.marquee {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    white-space: nowrap;
+    padding: 0 20px;
+}
+
+.marquee2 {
+    animation: scroll2 30s linear infinite;
+    animation-delay: -15s;
+}
+
+.marquee span {
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Scrolling Text Theme Colors */
+.dark .marquee span {
+    color: var(--dark-text);
+}
+
+.light .marquee span {
+    color: var(--light-text);
+}
+
+/* Scrolling Animations */
+@keyframes scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes scroll2 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-200%); }
+}
+
+/* Pause Animation on Hover */
+.marquee-content:hover .marquee {
+    animation-play-state: paused;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .profiles {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 16px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .inpu {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .marquee span {
+        font-size: 12px;
+        padding: 0 15px;
+    }
+    
+    .marquee, .marquee2 {
+        animation-duration: 20s;
+    }
+
+    #heading {
+        height: 70px;
+        padding: 16px;
+    }
+
+    .github-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-section {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        padding: 16px;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #heading {
+        height: 60px;
+        padding: 12px;
+    }
+
+    .github-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .logo-section {
+        gap: 12px;
+    }
+}
