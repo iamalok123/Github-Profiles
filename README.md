@@ -15,13 +15,19 @@ git clone https://github.com/yourusername/github-profiles.git
 ```
 
 ### 2. Navigate into the project directory:
+ ```bash
 cd github-profiles
+```
 
 ### 3. Install dependencies:
+ ```bash
 npm install
+```
 
 ### 4. Run the application:
+ ```bash
 npm start
+```
 
 This will start the development server, and you can view the app in your browser at `http://localhost:3000`.
 
@@ -45,15 +51,18 @@ Contributions are welcome! To contribute:
 
 1. Fork the repository.
 2. Create your feature branch:
+ ```bash
 git checkout -b feature/YourFeatureName
-
-3. Commit your changes:
+```
+4. Commit your changes:
+ ```bash
 git commit -m "Add YourFeatureName"
-
-4. Push to your branch:
+```
+6. Push to your branch:
+```bash
 git push origin feature/YourFeatureName
-
-5. Open a pull request.
+```
+8. Open a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
